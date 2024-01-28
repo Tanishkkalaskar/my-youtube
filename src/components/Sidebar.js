@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   const showSidebar = useSelector((store) => store.config.showSidebar);
@@ -8,7 +9,9 @@ const Sidebar = () => {
     <div className="min-w-52 p-4 shadow-md">
       <section>
         <ul className="text-l">
-          <li>Home</li>
+          <Link to="/">
+            <li>Home</li>
+          </Link>
           <li>Shorts</li>
           <li>Videos</li>
           <li>Live</li>

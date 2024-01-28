@@ -7,6 +7,7 @@ import {
   SEARCH_ICON,
 } from "../utils/constants";
 import { toggleSidebar } from "../utils/configSlice";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -24,6 +25,7 @@ const Header = () => {
           src={HAMBURGER_ICON}
           onClick={handleSidebarToggle}
         />
+
         <img className="h-9" alt="youtube-logo" src={YOUTUBE_LOGO} />
       </div>
       <div className="flex justify-center col-span-10">

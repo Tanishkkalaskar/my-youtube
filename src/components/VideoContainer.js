@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { YOUTUBE_API } from "../utils/constants";
 import { addPopularVideos } from "../utils/VideosSlice";
 import MaincontainerShimmer from "./MaincontainerShimmer";
@@ -25,7 +26,9 @@ const VideoContainer = () => {
   ) : (
     <div className="flex flex-wrap gap-4 justify-center">
       {popularVideos.map((video) => (
-        <VideoCard key={video.id} info={video}></VideoCard>
+        <Link to={"watch?v=" + video.id}>
+          <VideoCard key={video.id} info={video} />
+        </Link>
       ))}
     </div>
   );
