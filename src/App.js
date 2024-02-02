@@ -4,6 +4,7 @@ import "./App.css";
 import Body from "./components/Body";
 import Header from "./components/Header";
 import Maincontianer from "./components/Maincontianer";
+import SearchResults from "./components/SearchResults";
 import WatchPage from "./components/WatchPage";
 import appStore from "./utils/appStore";
 
@@ -21,6 +22,10 @@ function App() {
           path: "/watch",
           element: <WatchPage />,
         },
+        {
+          path: "/results",
+          element: <SearchResults />,
+        },
       ],
     },
   ]);
@@ -28,7 +33,6 @@ function App() {
   return (
     <Provider store={appStore}>
       <div>
-        <Header />
         <RouterProvider router={appRoutes} />
         {/**
        * App

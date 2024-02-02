@@ -9,8 +9,11 @@ const configSlice = createSlice({
     toggleSidebar: (state, action) => {
       state.showSidebar = !state.showSidebar;
     },
+    closeSidebar: (state) => {
+      state.showSidebar = false;
+    },
   },
 });
 
-export const { toggleSidebar } = configSlice.actions;
+export const { toggleSidebar, closeSidebar } = configSlice.actions;
 export default configSlice.reducer;

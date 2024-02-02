@@ -5,9 +5,25 @@ export const YOUTUBE_LOGO =
   "https://ongpng.com/wp-content/uploads/2023/04/3.youtube-logo-2416x776-1.png";
 
 export const USER_ICON =
-  "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.veryicon.com%2Ficons%2Finternet--web%2Fprejudice%2Fuser-128.html&psig=AOvVaw0IlJpHwJYe59i5YJaG_X4i&ust=1706537920386000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCNCOuaejgIQDFQAAAAAdAAAAABAo";
-
+  "https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png";
 export const SEARCH_ICON = "https://www.svgrepo.com/show/7109/search.svg";
 
+export const YOUTUBE_API_KEY = "&key=AIzaSyD2W9i6LQXFYFFqfoOhompPKYkjtAcYXgE";
+
 export const YOUTUBE_API =
-  "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=IN&key=AIzaSyD2W9i6LQXFYFFqfoOhompPKYkjtAcYXgE";
+  "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=US&key=AIzaSyD2W9i6LQXFYFFqfoOhompPKYkjtAcYXgE";
+
+export const YOUTUBE_SEARCH_SUGGESTIONS_API =
+  "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
+
+export const YOUTUBE_SEARCH_API =
+  "https://youtube.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=25&q=";
+
+export const YOUTUBE_WATCH_API =
+  "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=";
+
+export const YOUTUBE_CHANNEL_API =
+  "https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=";
+
+export const YOUTUBE_COMMENTS =
+  "https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&maxResults=20&videoId=";

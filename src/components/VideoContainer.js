@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { YOUTUBE_API } from "../utils/constants";
+import { YOUTUBE_API, YOUTUBE_API_KEY } from "../utils/constants";
 import { addPopularVideos } from "../utils/VideosSlice";
 import MaincontainerShimmer from "./MaincontainerShimmer";
 import VideoCard from "./VideoCard";
@@ -13,7 +13,7 @@ const VideoContainer = () => {
   const getVideos = async () => {
     const data = await fetch(YOUTUBE_API);
     const json = await data.json();
-    console.log(json.items);
+
     dispatch(addPopularVideos(json.items));
   };
 
@@ -24,10 +24,10 @@ const VideoContainer = () => {
   return !popularVideos ? (
     <MaincontainerShimmer></MaincontainerShimmer>
   ) : (
-    <div className="flex flex-wrap gap-4 justify-center">
+    <div className="flex flex-wrap gap-6 px-5">
       {popularVideos.map((video) => (
-        <Link to={"watch?v=" + video.id}>
-          <VideoCard key={video.id} info={video} />
+        <Link key={video.id} to={"watch?v=" + video.id}>
+          <VideoCard info={video} />
         </Link>
       ))}
     </div>

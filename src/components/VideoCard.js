@@ -1,40 +1,46 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { YOUTUBE_API_KEY, YOUTUBE_CHANNEL_API } from "../utils/constants";
+import getTimeDifference from "../utils/timeDifference";
+import formatViews from "../utils/viewCount";
 
 const VideoCard = ({ info }) => {
+  const [channelDetails, setChannelDetails] = useState(null);
   const { snippet, statistics } = info;
-  let { channelTitle, title, thumbnails, publishedAt } = snippet;
+  let { channelId, channelTitle, title, thumbnails, publishedAt } = snippet;
   const { viewCount } = statistics;
   const imgUrl = thumbnails.medium.url;
 
-  function calculateDaysDifference(givenDateStr) {
-    // Convert the given date string to a Date object
-    const givenDate = new Date(givenDateStr);
+  title = title.length > 50 ? title.slice(0, 65) + "..." : title;
 
-    // Get the current date
-    const currentDate = new Date();
+  // useEffect(() => {
+  //   getChannelDetails();
+  // }, []);
 
-    // Calculate the difference in milliseconds
-    const timeDifference = currentDate - givenDate;
-
-    // Convert milliseconds to days
-    const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-
-    return daysDifference;
-  }
-
-  const daysDifference = calculateDaysDifference(publishedAt);
-  title = title.length > 50 ? title.slice(0, 79) + "..." : title;
+  // const getChannelDetails = async () => {
+  //   const data = await fetch(YOUTUBE_CHANNEL_API + channelId + YOUTUBE_API_KEY);
+  //   const json = await data.json();
+  //   setChannelDetails(json.items[0]);
+  // };
 
   return (
     <div className="w-72">
       <div>
-        <img src={imgUrl} />
+        <img className="rounded-2xl hover:rounded-none" src={imgUrl} />
       </div>
       <div>
         <h4 className="font-bold my-2">{title}</h4>
-        <p className="text-gray-600">{channelTitle}</p>
+        <div className="flex items-center gap-2 mb-1">
+          {/* {channelDetails && (
+            <img
+              className="w-8 rounded-full"
+              src={channelDetails.snippet.thumbnails.medium.url}
+            />
+          )} */}
+          <p className="text-gray-600">{channelTitle}</p>
+        </div>
+
         <p className="text-gray-600">
-          {viewCount} views ・ {daysDifference} days ago
+          {formatViews(viewCount)} ・ {getTimeDifference(publishedAt)}
         </p>
       </div>
     </div>
