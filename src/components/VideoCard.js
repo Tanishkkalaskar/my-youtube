@@ -7,7 +7,7 @@ const VideoCard = ({ info }) => {
   const [channelDetails, setChannelDetails] = useState(null);
   const { snippet, statistics } = info;
   let { channelId, channelTitle, title, thumbnails, publishedAt } = snippet;
-  const { viewCount } = statistics;
+  const { viewCount } = statistics ? statistics : false;
   const imgUrl = thumbnails.medium.url;
 
   title = title.length > 50 ? title.slice(0, 65) + "..." : title;
@@ -40,7 +40,8 @@ const VideoCard = ({ info }) => {
         </div>
 
         <p className="text-gray-600">
-          {formatViews(viewCount)} ・ {getTimeDifference(publishedAt)}
+          {viewCount && formatViews(viewCount) + " . "}
+          {getTimeDifference(publishedAt)}
         </p>
       </div>
     </div>

@@ -28,7 +28,7 @@ const Comment = ({ snippet }) => {
             <img src={LikeIcon} className="w-5" />
             {likeCount}
           </div>
-          <div className="rotate-180 hover:bg-gray-100 p-2 hover:rounded-full">
+          <div className="rotate-180 hover:bg-gray-100 p-2 hover:rounded-full -z-10">
             <img src={LikeIcon} className="w-5" />
           </div>
           <button className="p-2 hover:bg-gray-100 hover:rounded-full">

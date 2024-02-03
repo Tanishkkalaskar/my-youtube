@@ -5,6 +5,7 @@ import useCurrentVideo from "../utils/useCurrentVideo";
 import CommentList from "./CommentList";
 import LiveChatList from "./LiveChatList";
 import VideoInfo from "./VideoInfo";
+import VideoInfoShimmer from "./VideoInfoShimmer";
 import WatchPageVideoCard from "./WatchPageVideoCard";
 
 const WatchPage = () => {
@@ -12,6 +13,7 @@ const WatchPage = () => {
     (store) => store.videos.currentWatchVideo
   );
   const recommendedVideos = useSelector((store) => store.videos.popularVideos);
+  const activeCategory = useSelector((store) => store.config.activeCategory);
 
   const [searchParams] = useSearchParams();
   const id = searchParams.get("v");
@@ -27,7 +29,9 @@ const WatchPage = () => {
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         ></iframe>
-        {currentWatchVideo && (
+        {!currentWatchVideo ? (
+          <VideoInfoShimmer />
+        ) : (
           <>
             <VideoInfo info={currentWatchVideo} />
             <CommentList id={id} />
@@ -36,9 +40,11 @@ const WatchPage = () => {
       </div>
       <div className="w-[30%] h-[100vh] overflow-y-auto">
         <LiveChatList />
-        {recommendedVideos?.map((video) => (
-          <WatchPageVideoCard key={video.id} snippet={video.snippet} />
-        ))}
+        {recommendedVideos?.map((video) => {
+          const id = activeCategory == "All" ? video.id : video.id.videoId;
+
+          return <WatchPageVideoCard key={id} snippet={video.snippet} />;
+        })}
       </div>
     </div>
   );

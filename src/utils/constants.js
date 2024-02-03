@@ -17,7 +17,7 @@ export const YOUTUBE_SEARCH_SUGGESTIONS_API =
   "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
 
 export const YOUTUBE_SEARCH_API =
-  "https://youtube.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=25&q=";
+  "https://youtube.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=50&q=";
 
 export const YOUTUBE_WATCH_API =
   "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=";
