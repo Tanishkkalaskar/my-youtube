@@ -32,11 +32,7 @@ const SearchResults = () => {
         return (
           <Link to={"/watch?v=" + videoId}>
             {" "}
-            <VideoTile
-              key={result.id.videoId}
-              id={result.id}
-              snippet={result.snippet}
-            />
+            <VideoTile key={videoId} snippet={result.snippet} />
           </Link>
         );
       })}

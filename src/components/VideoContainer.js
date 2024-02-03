@@ -24,7 +24,7 @@ const VideoContainer = () => {
   return !popularVideos ? (
     <MaincontainerShimmer></MaincontainerShimmer>
   ) : (
-    <div className="flex flex-wrap gap-6 px-5">
+    <div className="flex flex-wrap gap-6">
       {popularVideos.map((video) => (
         <Link key={video.id} to={"watch?v=" + video.id}>
           <VideoCard info={video} />

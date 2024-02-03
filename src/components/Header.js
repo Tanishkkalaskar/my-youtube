@@ -81,7 +81,7 @@ const Header = () => {
             }}
           />
           <button
-            className="p-4 bg-slate-100 border border-gray-400 border border-l-0 rounded-r-full"
+            className="p-4 bg-slate-100  border-gray-400 border border-l-0 rounded-r-full"
             onClick={handleSearch}
           >
             <img className="h-4" src={SEARCH_ICON} />

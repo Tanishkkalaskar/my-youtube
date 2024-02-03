@@ -1,8 +1,7 @@
 import React from "react";
 import getTimeDifference from "../utils/timeDifference";
 
-const VideoTile = ({ id, snippet }) => {
-  const { videoId } = id;
+const VideoTile = ({ snippet }) => {
   const { title, publishedAt, channelTitle, description, thumbnails } = snippet;
 
   return (

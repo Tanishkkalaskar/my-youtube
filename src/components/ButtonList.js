@@ -5,16 +5,26 @@ const ButtonList = () => {
   const categoryList = [
     "All",
     "Game",
-    "Song",
-    "Criket",
+    "Songs",
+    "Education",
+    "Travel",
+    "Science",
+    "Web",
+    "Cricket",
     "News",
     "Valentines",
     "Cooking",
     "Football",
+    "Animation",
+    "Bollywod",
+    "Marathi",
+    "Dubai",
+    "Ram",
+    "iphone",
   ];
 
   return (
-    <div className="flex my-5">
+    <div className="flex my-5 gap-4 overflow-x-scroll">
       {categoryList.map((category) => (
         <Button key={category} name={category}></Button>
       ))}
