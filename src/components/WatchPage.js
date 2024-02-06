@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import useCurrentVideo from "../utils/useCurrentVideo";
 import CommentList from "./CommentList";
 import LiveChatList from "./LiveChatList";
@@ -40,11 +40,17 @@ const WatchPage = () => {
       </div>
       <div className="w-[30%] h-[100vh] overflow-y-auto">
         <LiveChatList />
-        {recommendedVideos?.map((video) => {
-          const id = activeCategory == "All" ? video.id : video.id.videoId;
+        {recommendedVideos
+          ?.filter((video) => video.id != id)
+          .map((video) => {
+            const id = activeCategory == "All" ? video.id : video.id.videoId;
 
-          return <WatchPageVideoCard key={id} snippet={video.snippet} />;
-        })}
+            return (
+              <Link key={id} to={"/watch?v=" + id}>
+                <WatchPageVideoCard snippet={video.snippet} />
+              </Link>
+            );
+          })}
       </div>
     </div>
   );

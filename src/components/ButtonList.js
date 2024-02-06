@@ -13,7 +13,7 @@ const ButtonList = () => {
     "Web",
     "Cricket",
     "News",
-    "Valentines",
+    "Live",
     "Cooking",
     "Football",
     "Animation",
