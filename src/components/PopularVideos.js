@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { YOUTUBE_MOST_POPULAR_API } from "../utils/constants";
+import { YOUTUBE_API_KEY, YOUTUBE_MOST_POPULAR_API } from "../utils/constants";
 import { addPopularVideos } from "../utils/VideosSlice";
 import MaincontainerShimmer from "./MaincontainerShimmer";
 import VideoCard from "./VideoCard";
@@ -34,7 +34,8 @@ const PopularVideos = () => {
     const data = await fetch(
       "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=24&pageToken=" +
         nextPageToken.current +
-        "&regionCode=US&key=AIzaSyD2W9i6LQXFYFFqfoOhompPKYkjtAcYXgE"
+        "&regionCode=US" +
+        YOUTUBE_API_KEY
     );
     const json = await data.json();
     nextPageToken.current = json?.nextPageToken;

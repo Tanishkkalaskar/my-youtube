@@ -15,7 +15,7 @@ export const YOUTUBE_MOST_POPULAR_API =
   YOUTUBE_API_KEY;
 
 export const YOUTUBE_SEARCH_SUGGESTIONS_API =
-  "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
+  "https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
 
 export const YOUTUBE_SEARCH_API =
   "https://youtube.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=50&q=";
