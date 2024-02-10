@@ -26,7 +26,7 @@ const SearchResults = () => {
   return searchResults.length == 0 ? (
     <MaincontainerShimmer />
   ) : (
-    <div className="overflow-x-hidden">
+    <div className="mt-8 mx-auto overflow-x-hidden">
       {searchResults.map((result, index) => {
         const { videoId } = result.id;
         return (

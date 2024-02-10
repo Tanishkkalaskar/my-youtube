@@ -84,7 +84,7 @@ const Header = () => {
             className="p-2 lg:p-4 bg-slate-100  border-gray-400 border border-l-0 rounded-r-full"
             onClick={handleSearch}
           >
-            <img className="h-2 lg-h-4" src={SEARCH_ICON} />
+            <img className="h-2 lg:h-4" src={SEARCH_ICON} />
           </button>
         </div>
         {showSuggestions && (

@@ -71,10 +71,10 @@ const VideoInfo = ({ info }) => {
         </div>
       </div>
       <div className="bg-gray-100 p-4 rounded-lg">
-        <h4 className="font-semibold text-sm lg:text-l my-2">
+        <h4 className="font-semibold text-md lg:text-xl my-2">
           {viewCount} views &nbsp;&nbsp; {formattedDate}
         </h4>
-        <p className="text-sm lg:text-l">{description}</p>
+        <p className="text-md lg:text-xl">{description}</p>
       </div>
     </div>
   );

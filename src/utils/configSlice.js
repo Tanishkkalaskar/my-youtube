@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const configSlice = createSlice({
   name: "config",
   initialState: {
-    showSidebar: true,
+    showSidebar: false,
   },
   reducers: {
     toggleSidebar: (state, action) => {
