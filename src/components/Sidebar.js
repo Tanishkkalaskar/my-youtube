@@ -14,69 +14,69 @@ const Sidebar = () => {
   const showSidebar = useSelector((store) => store.config.showSidebar);
 
   return !showSidebar ? null : (
-    <div className="w-72 mr-4 p-5 shadow-md">
+    <div className="w-72 mr-4 p-3 lg:p-5 shadow-md">
       <section className="border-gray-200 border-b-2 p-2">
-        <ul className="text-xl">
+        <ul className="text-sm lg:text-xl">
           <Link to="/">
-            <li className="flex gap-6">
-              <img className="h-6" src={HomeIcon} />
+            <li className="flex gap-2 lg:gap-6">
+              <img className="h-4 lg:h-6" src={HomeIcon} />
               <span>Home</span>
             </li>
           </Link>
-          <li className="flex gap-5 mt-6">
-            <img className="h-6" src={SubscriptionIcon} />
+          <li className="flex gap-2 lg:gap-5 mt-6">
+            <img className="h-4 lg:h-6" src={SubscriptionIcon} />
             <span>Subscriptions</span>
           </li>
-          <li className="flex gap-5 mt-6">
-            <img className="h-6" src={ExploreIcon} />
+          <li className="flex gap-2 lg:gap-5 mt-6">
+            <img className="h-4 lg:h-6" src={ExploreIcon} />
             <span>Explore</span>
           </li>
         </ul>
       </section>
       <section className="border-gray-200 border-b-2 p-2">
-        <ul className="text-xl">
-          <li className="flex gap-6 mt-5">
-            <img className="h-6" src={LibraryIcon} />
+        <ul className="text-sm lg:text-xl">
+          <li className="flex gap-2 lg:gap-6 mt-5">
+            <img className="h-4 lg:h-6" src={LibraryIcon} />
             <span>Library</span>
           </li>
-          <li className="flex gap-6 mt-5">
-            <img className="h-6" src={HistoryIcon} />
+          <li className="flex gap-2 lg:gap-6 mt-5">
+            <img className="h-4 lg:h-6" src={HistoryIcon} />
             <span>History</span>
           </li>
-          <li className="flex gap-6 mt-5">
-            <img className="h-6" src={YourVideosIcon} />
+          <li className="flex gap-2 lg:gap-6 mt-5">
+            <img className="h-4 lg:h-6" src={YourVideosIcon} />
             <span>Your videos</span>
           </li>
-          <li className="flex gap-6 mt-5">
-            <img className="h-6" src={WatchLaterIcon} />
+          <li className="flex gap-2 lg:gap-6 mt-5">
+            <img className="h-4 lg:h-6" src={WatchLaterIcon} />
             <span>Watch later</span>
           </li>
-          <li className="flex gap-6 mt-5">
-            <img className="h-6" src={LikeIcon} />
+          <li className="flex gap-2 lg:gap-6 mt-5">
+            <img className="h-4 lg:h-6" src={LikeIcon} />
             <span>Liked videos</span>
           </li>
         </ul>
       </section>
       <section className="border-gray-200 border-b-2 p-2">
-        <ul className="text-xl">
-          <li className="flex gap-6 mt-5">
-            <img className="h-6" src={LibraryIcon} />
+        <ul className="text-sm lg:text-xl">
+          <li className="flex gap-2 lg:gap-6 mt-5">
+            <img className="h-4 lg:h-6" src={LibraryIcon} />
             <span>Library</span>
           </li>
-          <li className="flex gap-6 mt-5">
-            <img className="h-6" src={HistoryIcon} />
+          <li className="flex gap-2 lg:gap-6 mt-5">
+            <img className="h-4 lg:h-6" src={HistoryIcon} />
             <span>History</span>
           </li>
-          <li className="flex gap-6 mt-5">
-            <img className="h-6" src={YourVideosIcon} />
+          <li className="flex gap-2 lg:gap-6 mt-5">
+            <img className="h-4 lg:h-6" src={YourVideosIcon} />
             <span>Your videos</span>
           </li>
-          <li className="flex gap-6 mt-5">
-            <img className="h-6" src={WatchLaterIcon} />
+          <li className="flex gap-2 lg:gap-6 mt-5">
+            <img className="h-4 lg:h-6" src={WatchLaterIcon} />
             <span>Watch later</span>
           </li>
-          <li className="flex gap-6 mt-5">
-            <img className="h-6" src={LikeIcon} />
+          <li className="flex gap-2 lg:gap-6 mt-5">
+            <img className="h-4 lg:h-6" src={LikeIcon} />
             <span>Liked videos</span>
           </li>
         </ul>

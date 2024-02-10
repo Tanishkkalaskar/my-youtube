@@ -32,46 +32,49 @@ const VideoInfo = ({ info }) => {
 
   return !channelDetails ? null : (
     <div className="my-4">
-      <h2 className="font-bold text-3xl">{title}</h2>
+      <h2 className="font-bold text-md lg:text-3xl">{title}</h2>
       <div className="flex my-4 justify-between">
-        <div className="flex gap-4 items-center ">
+        <div className="flex gap-1 lg:gap-4 items-center ">
           <img
-            className="w-12 rounded-full"
+            className="w-5 lg:w-12 rounded-full"
             src={channelDetails.snippet.thumbnails.medium.url}
           />
           <div>
-            <p className="font-semibold text-xl">{channelTitle}</p>
-            <p className="text-gray-700 text-sm">
+            <p className="font-semibold text-xs lg:text-xl">{channelTitle}</p>
+            <p className="text-gray-700 text-xs lg:text-sm">
               {channelDetails.statistics.subscriberCount}
             </p>
           </div>
+          <button className="p-1 lg:px-4 lg:py-2  bg-black text-xs lg:text-lg text-white rounded-full">
+            Subscribe
+          </button>
         </div>
-        <div className="flex gap-6">
-          <div className="flex bg-gray-100 rounded-full">
-            <p className="flex gap-1 items-center p-4 border-r-2 border-gray-200">
-              <img src={LikeIcon} className="w-7" />
-              {likeCount}
+        <div className="flex items-center gap-4 lg:gap-6">
+          <div className="flex gap-4 lg:gap-0 lg:bg-gray-100 rounded-full">
+            <p className="flex gap-1 items-center lg:p-4 lg:border-r-2 lg:border-gray-200">
+              <img src={LikeIcon} className="w-4 lg:w-7" />
+              <span className="hidden lg:inline-block">{likeCount}</span>
             </p>
-            <p className="rotate-180 p-4">
-              <img src={LikeIcon} className="w-7" />
+            <p className="rotate-180 lg:p-4">
+              <img src={LikeIcon} className="w-4 lg:w-7" />
             </p>
           </div>
 
-          <p className="flex gap-2 items-center bg-gray-100 rounded-full px-6 py-4">
-            <img src={ShareIcon} className="w-7" />
-            <span>Share</span>
+          <p className="flex gap-2 items-center lg:bg-gray-100 rounded-full lg:px-6 lg:py-4">
+            <img src={ShareIcon} className="w-4 lg:w-7" />
+            <span className="hidden lg:inline-block">Share</span>
           </p>
-          <p className="flex gap-2 items-center bg-gray-100 rounded-full px-6 py-4">
-            <img src={SaveIcon} className="w-7" />
-            <span>Save</span>
+          <p className="flex lg:gap-2 items-center lg:bg-gray-100 lg:rounded-full lg:px-6 lg:py-4">
+            <img src={SaveIcon} className="w-4 lg:w-7" />
+            <span className="hidden lg:inline-block">Save</span>
           </p>
         </div>
       </div>
       <div className="bg-gray-100 p-4 rounded-lg">
-        <h4 className="font-semibold text-l my-2">
+        <h4 className="font-semibold text-sm lg:text-l my-2">
           {viewCount} views &nbsp;&nbsp; {formattedDate}
         </h4>
-        <p className="text-l">{description}</p>
+        <p className="text-sm lg:text-l">{description}</p>
       </div>
     </div>
   );

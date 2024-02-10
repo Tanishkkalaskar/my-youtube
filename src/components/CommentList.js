@@ -24,7 +24,9 @@ const CommentList = ({ id }) => {
     <div>
       {comments && (
         <>
-          <h2 className="font-semibold">{comments.length} comments</h2>
+          <h2 className="font-semibold text-sm lg:text-lg">
+            {comments.length} comments
+          </h2>
           {comments.map((comment) => (
             <Comment
               key={comment?.id}

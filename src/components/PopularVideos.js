@@ -67,7 +67,7 @@ const PopularVideos = () => {
   return !popularVideos ? (
     <MaincontainerShimmer />
   ) : (
-    <div className="flex flex-wrap gap-6">
+    <div className="flex justify-center flex-wrap gap-6">
       {popularVideos?.map((video, index) => {
         return (
           // using index as a key because api is returing duplicate data (using index is not recommended)

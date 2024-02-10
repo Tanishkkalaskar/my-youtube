@@ -14,7 +14,10 @@ const Button = ({ name }) => {
   return (
     <div>
       <button
-        className={style + " h-12 text-md px-4 py-2 my-4 rounded-lg"}
+        className={
+          style +
+          " h-12 text-sm lg:text-md px-2 lg:px-4 lg:py-2 mt-4 rounded-lg"
+        }
         onClick={handleCategorySelection}
       >
         {name}

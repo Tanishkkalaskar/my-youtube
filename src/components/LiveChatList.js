@@ -41,7 +41,7 @@ const LiveChatList = () => {
       <div className="py-4">
         <form onSubmit={(e) => e.preventDefault()}>
           <input
-            className="w-[85%] border-gray-200 border-0 border-b-2 p-2"
+            className="w-3/4 lg:w-[85%] border-gray-200 border-0 border-b-2 p-2"
             placeholder="Enter comment"
             value={liveComment}
             onChange={(e) => setLiveComment(e.target.value)}

@@ -32,7 +32,7 @@ const CategoryVideos = () => {
   return !activeCategoryVideos ? (
     <MaincontainerShimmer />
   ) : (
-    <div className="flex flex-wrap gap-6">
+    <div className="flex justify-center flex-wrap gap-6">
       {activeCategoryVideos?.map((video) => {
         return (
           <Link key={video.id.videoId} to={"watch?v=" + video.id.videoId}>

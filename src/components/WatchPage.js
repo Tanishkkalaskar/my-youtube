@@ -21,8 +21,8 @@ const WatchPage = () => {
   useCurrentVideo(id);
 
   return (
-    <div className="w-full p-6 flex gap-4">
-      <div className="w-[70%] h-[100vh] flex flex-col overflow-y-auto">
+    <div className="w-full p-6 flex flex-col lg:flex-row gap-4">
+      <div className="w-full lg:w-[70%] lg:h-[100vh] flex flex-col overflow-y-auto">
         <iframe
           className="w-full aspect-video rounded-lg"
           src={"https://www.youtube.com/embed/" + id}
@@ -38,7 +38,7 @@ const WatchPage = () => {
           </>
         )}
       </div>
-      <div className="w-[30%] h-[100vh] overflow-y-auto">
+      <div className="w-full lg:w-[30%] lg:h-[100vh] overflow-y-auto">
         <LiveChatList />
         {recommendedVideos
           ?.filter((video) => video.id != id)

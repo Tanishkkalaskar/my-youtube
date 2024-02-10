@@ -25,7 +25,7 @@ const ButtonList = () => {
   ];
 
   return (
-    <div className="flex my-5 gap-4 overflow-x-scroll">
+    <div className="flex my-2 lg:my-5 gap-4 overflow-x-scroll">
       {categoryList.map((category) => (
         <Button key={category} name={category}></Button>
       ))}

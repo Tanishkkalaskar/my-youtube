@@ -26,11 +26,11 @@ const SearchResults = () => {
   return searchResults.length == 0 ? (
     <MaincontainerShimmer />
   ) : (
-    <div>
-      {searchResults.map((result) => {
+    <div className="overflow-x-hidden">
+      {searchResults.map((result, index) => {
         const { videoId } = result.id;
         return (
-          <Link to={"/watch?v=" + videoId}>
+          <Link key={index} to={"/watch?v=" + videoId}>
             {" "}
             <VideoTile key={videoId} snippet={result.snippet} />
           </Link>
