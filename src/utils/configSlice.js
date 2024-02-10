@@ -4,7 +4,6 @@ const configSlice = createSlice({
   name: "config",
   initialState: {
     showSidebar: true,
-    activeCategory: "All",
   },
   reducers: {
     toggleSidebar: (state, action) => {
@@ -13,12 +12,8 @@ const configSlice = createSlice({
     closeSidebar: (state) => {
       state.showSidebar = false;
     },
-    updateActiveCategory: (state, action) => {
-      state.activeCategory = action.payload;
-    },
   },
 });
 
-export const { toggleSidebar, closeSidebar, updateActiveCategory } =
-  configSlice.actions;
+export const { toggleSidebar, closeSidebar } = configSlice.actions;
 export default configSlice.reducer;

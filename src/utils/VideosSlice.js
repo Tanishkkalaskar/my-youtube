@@ -4,13 +4,28 @@ const VideosSlice = createSlice({
   name: "videos",
   initialState: {
     popularVideos: null,
+    activeCategoryVideos: null,
+    activeCategory: "All",
     currentWatchVideo: null,
     channelDetails: null,
     comments: null,
   },
   reducers: {
     addPopularVideos: (state, action) => {
-      state.popularVideos = action.payload;
+      if (!state.popularVideos) {
+        state.popularVideos = action.payload;
+      } else {
+        state.popularVideos = [...state.popularVideos, ...action.payload];
+      }
+    },
+    updateActiveCategory: (state, action) => {
+      state.activeCategory = action.payload;
+    },
+    addActiveCategoryVideos: (state, action) => {
+      state.activeCategoryVideos = action.payload;
+    },
+    clearActiveCategoryVideos: (state, action) => {
+      state.activeCategoryVideos = null;
     },
     addCurrentWatchVideo: (state, action) => {
       state.currentWatchVideo = action.payload;
@@ -26,6 +41,9 @@ const VideosSlice = createSlice({
 
 export const {
   addPopularVideos,
+  updateActiveCategory,
+  addActiveCategoryVideos,
+  clearActiveCategoryVideos,
   addCurrentWatchVideo,
   addChannelDetails,
   addComments,

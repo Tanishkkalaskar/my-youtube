@@ -42,11 +42,11 @@ const WatchPage = () => {
         <LiveChatList />
         {recommendedVideos
           ?.filter((video) => video.id != id)
-          .map((video) => {
+          .map((video, index) => {
             const id = activeCategory == "All" ? video.id : video.id.videoId;
 
             return (
-              <Link key={id} to={"/watch?v=" + id}>
+              <Link key={index} to={"/watch?v=" + id}>
                 <WatchPageVideoCard snippet={video.snippet} />
               </Link>
             );

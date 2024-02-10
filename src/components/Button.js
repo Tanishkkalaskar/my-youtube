@@ -1,11 +1,11 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { updateActiveCategory } from "../utils/configSlice";
+import { updateActiveCategory } from "../utils/VideosSlice";
 
 const Button = ({ name }) => {
   const dispatch = useDispatch();
-  const activeCategory = useSelector((store) => store.config.activeCategory);
-  const style = activeCategory == name ? "bg-black text-white" : "bg-gray-200";
+  const activeCategory = useSelector((store) => store.videos.activeCategory);
+  const style = activeCategory === name ? "bg-black text-white" : "bg-gray-200";
 
   const handleCategorySelection = () => {
     dispatch(updateActiveCategory(name));
